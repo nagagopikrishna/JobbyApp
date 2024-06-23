@@ -55,8 +55,8 @@
 
 .icon {
   color: #ffff;
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 20px;
 }
 
 .nav-item-sm {
@@ -75,14 +75,14 @@
   }
 
   .nav-items {
-    gap: 24px;
+    gap: 20px;
   }
 
   .nav-items-container {
     justify-content: space-between;
     align-items: center;
     margin-left: 10px;
-    padding: 6px;
+    padding: 0px;
   }
 }
 
