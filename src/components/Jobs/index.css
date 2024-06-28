@@ -5,11 +5,16 @@
   min-height: 100vh;
 }
 
+.job-sub-container {
+  display: flex;
+  flex-grow: 1;
+  margin: 10px;
+  margin-top: 20px;
+}
+
 .job-container {
   display: flex;
   flex-direction: column;
-  margin: 10px;
-  margin-top: 20px;
 }
 
 .search-container {
@@ -48,4 +53,9 @@
   .search-jobs {
     width: 40%;
   }
+}
+
+.slider-bar-container {
+  width: 30%;
+  padding: 10px;
 }
