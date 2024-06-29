@@ -4,6 +4,7 @@ import Cookies from 'js-cookie'
 
 import Header from '../Header'
 import ProfileDetails from '../ProfileDetails'
+import Filters from '../Filters'
 import './index.css'
 
 class Jobs extends Component {
@@ -32,8 +33,24 @@ class Jobs extends Component {
     this.setState({profileDetails: updatedProfileDetails})
   }
 
+  getJobs = async () => {
+    const jwtToken = Cookies.get('jwt_token')
+    const url = 'https://apis.ccbp.in/jobs'
+    const options = {
+      headers: {
+        authorization: `Bearer ${jwtToken}`,
+      },
+      method: 'GET',
+    }
+
+    const response = await fetch(url, options)
+    const data = await response.json()
+    console.log(data)
+  }
+
   componentDidMount = () => {
     this.getUserProfileDetails()
+    this.getJobs()
   }
 
   renderSearchBar = () => (
@@ -47,7 +64,10 @@ class Jobs extends Component {
     const {profileDetails} = this.state
     return (
       <div className="slider-bar-container">
+        {/* {this.renderSearchBar('search-container-sm')} */}
         <ProfileDetails profileDetails={profileDetails} />
+        <hr className="line" />
+        <Filters />
       </div>
     )
   }
@@ -58,7 +78,10 @@ class Jobs extends Component {
         <Header />
         <div className="job-sub-container">
           {this.renderSlideBar()}
-          <div className="job-container">{this.renderSearchBar()}</div>
+          <div className="job-container">
+            {this.renderSearchBar()}
+            {/* <h1> naga </h1> */}
+          </div>
         </div>
       </div>
     )

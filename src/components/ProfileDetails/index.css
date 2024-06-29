@@ -4,17 +4,24 @@
   padding: 14px;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
-  width: 290px;
+  width: 260px;
+  height: 190px;
+}
+
+.profile-icon {
+  width: 60px;
 }
 
 .profile-name {
   font-family: 'Roboto';
   color: #6366f1;
   font-size: 24px;
+  font-size: 18px;
 }
 
 .profile-bio {
   font-family: 'Roboto';
   color: #475569;
   font-weight: 500;
+  font-size: 14px;
 }

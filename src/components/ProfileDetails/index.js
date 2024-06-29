@@ -5,7 +5,7 @@ const ProfileDetails = props => {
   const {name, profileImageUrl, shortBio} = profileDetails
   return (
     <div className="profile-section-container">
-      <img src={profileImageUrl} alt="profile" />
+      <img src={profileImageUrl} alt="profile" className="profile-icon" />
       <h1 className="profile-name"> {name} </h1>
       <p className="profile-bio"> {shortBio}</p>
     </div>

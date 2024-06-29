@@ -1,0 +1,33 @@
+.filter-heading {
+  font-family: 'Roboto';
+  color: #fff;
+  align-self: flex-start;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 0px;
+}
+
+.filtered-group-list {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.filtered-group-items {
+  display: flex;
+  align-items: center;
+}
+
+.input-element {
+  width: 14px;
+  height: 14px;
+}
+
+.label-description {
+  font-family: 'Roboto';
+  color: #fff;
+  margin-left: 10px;
+  font-weight: 300;
+  font-size: 16px;
+  padding-bottom: 14px;
+}
