@@ -2,7 +2,7 @@
   font-family: 'Roboto';
   color: #fff;
   align-self: flex-start;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
   padding: 0px;
 }
@@ -19,8 +19,8 @@
 }
 
 .input-element {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
 }
 
 .label-description {
@@ -28,6 +28,21 @@
   color: #fff;
   margin-left: 10px;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 14px;
   padding-bottom: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .filter-heading {
+    font-size: 18px;
+  }
+
+  .input-element {
+    width: 14px;
+    width: 14px;
+  }
+
+  .label-description {
+    font-size: 16px;
+  }
 }

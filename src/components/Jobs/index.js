@@ -5,10 +5,11 @@ import Cookies from 'js-cookie'
 import Header from '../Header'
 import ProfileDetails from '../ProfileDetails'
 import Filters from '../Filters'
+import JobCard from '../JobCard'
 import './index.css'
 
 class Jobs extends Component {
-  state = {profileDetails: {}}
+  state = {profileDetails: {}, jobsList: []}
 
   getUserProfileDetails = async () => {
     const url = 'https://apis.ccbp.in/profile'
@@ -45,7 +46,17 @@ class Jobs extends Component {
 
     const response = await fetch(url, options)
     const data = await response.json()
-    console.log(data)
+    const updatedData = data.jobs.map(eachJob => ({
+      id: eachJob.id,
+      title: eachJob.title,
+      companyLogoUrl: eachJob.company_logo_url,
+      employmentType: eachJob.employment_type,
+      jobDescription: eachJob.job_description,
+      location: eachJob.location,
+      rating: eachJob.rating,
+      packagePerAnnum: eachJob.package_per_annum,
+    }))
+    this.setState({jobsList: updatedData})
   }
 
   componentDidMount = () => {
@@ -53,8 +64,8 @@ class Jobs extends Component {
     this.getJobs()
   }
 
-  renderSearchBar = () => (
-    <div className="search-container">
+  renderSearchBar = searchId => (
+    <div className="search-container" id={searchId}>
       <input type="search" className="search-jobs" placeholder="Search" />
       <BsSearch className="search-icon" />
     </div>
@@ -64,7 +75,7 @@ class Jobs extends Component {
     const {profileDetails} = this.state
     return (
       <div className="slider-bar-container">
-        {/* {this.renderSearchBar('search-container-sm')} */}
+        {this.renderSearchBar('search-container-sm')}
         <ProfileDetails profileDetails={profileDetails} />
         <hr className="line" />
         <Filters />
@@ -73,14 +84,21 @@ class Jobs extends Component {
   }
 
   render() {
+    const {jobsList} = this.state
+    console.log(jobsList)
+
     return (
       <div className="jobs-main-container">
         <Header />
         <div className="job-sub-container">
           {this.renderSlideBar()}
           <div className="job-container">
-            {this.renderSearchBar()}
-            {/* <h1> naga </h1> */}
+            {this.renderSearchBar('search-container-lg')}
+            <ul className="jobs-list-container">
+              {jobsList.map(each => (
+                <JobCard jobs={each} key={each.id} />
+              ))}
+            </ul>
           </div>
         </div>
       </div>
