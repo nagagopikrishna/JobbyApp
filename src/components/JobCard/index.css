@@ -4,6 +4,7 @@
   border-radius: 14px;
   margin-bottom: 14px;
   padding-top: 20px;
+  margin-top: 20px;
 }
 
 .job-title-container {
@@ -38,52 +39,74 @@
   font-size: 16px;
   padding: 0px;
   margin: 0px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .job-details {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 10px;
+  gap: 10px;
 }
 
 .sub-job-details {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 .location-container {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
 
 .icon {
   color: #ffff;
 }
 
-.job-type-container {
+.job-information {
+  font-family: 'Roboto';
+  color: #ffff;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.job-information-pack {
+  font-family: 'Roboto';
+  color: #ffff;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* .job-type-container {
   display: flex;
   align-items: center;
-  gap: 10px;
-}
+  gap: 5px;
+} */
 
 .job-list-line {
   margin-top: 10px;
+  color: #ffff;
 }
 
 .job-description-heading {
   font-family: 'Roboto';
   color: #ffff;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .job-description {
   font-family: 'Roboto';
   color: #ffff;
-  font-size: 14px;
   font-weight: 300;
+  font-size: 14px;
+}
+
+.job-card-link {
+  text-decoration: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -91,6 +114,7 @@
     padding: 30px;
     border-radius: 20px;
     margin-bottom: 20px;
+    margin-top: 0px;
   }
 
   .company-logo {
@@ -102,12 +126,36 @@
     font-size: 500;
   }
 
+  .job-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .job-type-container {
+    gap: 20px;
+  }
+
+  .job-information {
+    font-family: 'Roboto';
+    color: #ffff;
+    font-size: 16px;
+  }
+
+  .job-information-pack {
+    font-family: 'Roboto';
+    color: #ffff;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
   .job-description-heading {
     font-size: 24px;
+    font-weight: 400;
   }
 
   .job-description {
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 300;
   }
 }

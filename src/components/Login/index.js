@@ -50,35 +50,35 @@ class Login extends Component {
   }
 
   renderUserNameField = username => (
-    <>
+    <div className="input-field-container">
       <label htmlFor="username" className="label-element">
         USERNAME
       </label>
       <input
         type="text"
         id="username"
-        className="input-element"
+        className="login-input-element"
         placeholder="Username"
         onChange={this.onChangeUserName}
         value={username}
       />
-    </>
+    </div>
   )
 
   renderPasswordField = password => (
-    <>
+    <div className="input-field-container">
       <label htmlFor="password" className="label-element">
         PASSWORD
       </label>
       <input
         type="password"
         id="password"
-        className="input-element"
+        className="login-input-element"
         placeholder="Password"
         onChange={this.onChangePassword}
         value={password}
       />
-    </>
+    </div>
   )
 
   render() {
@@ -100,6 +100,17 @@ class Login extends Component {
           />
           {this.renderUserNameField(username)}
           {this.renderPasswordField(password)}
+          {/* <label htmlFor="password" className="label-element">
+            PASSWORD
+          </label>
+          <input
+            type="password"
+            id="password"
+            className="input-element"
+            placeholder="Password"
+            onChange={this.onChangePassword}
+            value={password}
+          /> */}
           <button type="submit" className="login-button">
             Login
           </button>

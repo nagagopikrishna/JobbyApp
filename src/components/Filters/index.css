@@ -16,9 +16,10 @@
 .filtered-group-items {
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
 }
 
-.input-element {
+.input-element-checkbox {
   width: 12px;
   height: 12px;
 }
@@ -29,7 +30,7 @@
   margin-left: 10px;
   font-weight: 300;
   font-size: 14px;
-  padding-bottom: 14px;
+  /* padding-bottom: 14px; */
 }
 
 @media screen and (min-width: 768px) {
@@ -37,7 +38,7 @@
     font-size: 18px;
   }
 
-  .input-element {
+  .input-element-checkbox {
     width: 14px;
     width: 14px;
   }

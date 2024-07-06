@@ -71,7 +71,7 @@ const Filters = () => {
             <input
               type="radio"
               id={each.salaryRangeId}
-              className="input-element"
+              className="input-element-checkbox"
             />
             <label htmlFor={each.salaryRangeId} className="label-description">
               {each.label}
