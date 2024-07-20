@@ -38,47 +38,82 @@ const salaryRangesList = [
   },
 ]
 
-const Filters = () => {
+const Filters = props => {
+  const renderEmployeesTypeList = () => {
+    const {updateJobTypeCheck} = props
+
+    return employmentTypesList.map(each => {
+      const onChangeEmployTypeCheck = () => {
+        updateJobTypeCheck(each.employmentTypeId)
+      }
+
+      return (
+        <li className="filtered-group-items" key={each.employmentTypeId}>
+          <input
+            type="checkbox"
+            id={each.employmentTypeId}
+            className="input-element"
+            onChange={onChangeEmployTypeCheck}
+          />
+          <label htmlFor={each.employmentTypeId} className="label-description">
+            {each.label}
+          </label>
+        </li>
+      )
+    })
+  }
+
   const renderTypesOfEmployees = () => (
     <div>
       <h1 className="filter-heading"> Types of Employee</h1>
-      <ul className="filtered-group-list">
-        {employmentTypesList.map(each => (
-          <li className="filtered-group-items" key={each.employmentTypeId}>
-            <input
-              type="checkbox"
-              id={each.employmentTypeId}
-              className="input-element"
-            />
-            <label
-              htmlFor={each.employmentTypeId}
-              className="label-description"
-            >
-              {each.label}
-            </label>
-          </li>
-        ))}
-      </ul>
+      <ul className="filtered-group-list">{renderEmployeesTypeList()}</ul>
     </div>
   )
+
+  const renderSalaryList = () => {
+    const {updatedSalaryId, activeSalary} = props
+
+    return salaryRangesList.map(each => {
+      const onChangeSalaryRange = () => {
+        updatedSalaryId(each.salaryRangeId)
+      }
+
+      const isChecked = each.salaryRangeId === activeSalary
+
+      return (
+        <li className="filtered-group-items" key={each.salaryRangeId}>
+          <input
+            type="radio"
+            id={each.salaryRangeId}
+            className="input-element-checkbox"
+            onChange={onChangeSalaryRange}
+            checked={isChecked}
+          />
+          <label htmlFor={each.salaryRangeId} className="label-description">
+            {each.label}
+          </label>
+        </li>
+      )
+    })
+  }
+
+  //   const renderSalaryRange = props => {
+  //     const {updatedSalaryId} = props
+
+  //     console.log(updatedSalaryId())
+
+  //     return (
+  //       <div>
+  //         <h1 className="filter-heading"> Salary Range </h1>
+  //         <ul className="filtered-group-list">{renderSalaryList()}</ul>
+  //       </div>
+  //     )
+  //   }
 
   const renderSalaryRange = () => (
     <div>
       <h1 className="filter-heading"> Salary Range </h1>
-      <ul className="filtered-group-list">
-        {salaryRangesList.map(each => (
-          <li className="filtered-group-items" key={each.salaryRangeId}>
-            <input
-              type="radio"
-              id={each.salaryRangeId}
-              className="input-element-checkbox"
-            />
-            <label htmlFor={each.salaryRangeId} className="label-description">
-              {each.label}
-            </label>
-          </li>
-        ))}
-      </ul>
+      <ul className="filtered-group-list">{renderSalaryList()}</ul>
     </div>
   )
 
