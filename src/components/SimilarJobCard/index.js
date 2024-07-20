@@ -17,7 +17,11 @@ const SimilarJobCard = props => {
   return (
     <li className="similar-job-card">
       <div className="job-title-container">
-        <img src={companyLogoUrl} alt={title} className="company-logo" />
+        <img
+          src={companyLogoUrl}
+          alt="similar job company logo"
+          className="company-logo"
+        />
         <div className="title-container">
           <h1 className="title"> {title}</h1>
           <div className="rating-container">

@@ -130,7 +130,16 @@ class Jobs extends Component {
           onChange={this.onChangeUserSearch}
           value={userSearch}
         />
-        <BsSearch className="search-icon" onClick={() => this.getJobs()} />
+        {/* <button
+          type="button"
+          
+        > */}
+        <BsSearch
+          className="search-icon"
+          data-testid="searchButton"
+          onClick={() => this.getJobs()}
+        />
+        {/* </button> */}
       </div>
     )
   }
@@ -174,7 +183,7 @@ class Jobs extends Component {
   }
 
   renderJobsLoaderView = () => (
-    <div className="jobs-loader-container">
+    <div className="jobs-loader-container" data-testid="loader">
       <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
     </div>
   )
@@ -183,12 +192,12 @@ class Jobs extends Component {
     <div className="no-job-container">
       <img
         src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png"
-        alt="no job"
+        alt="no jobs"
         className="no-job-image"
       />
       <h1 className="no-job-heading"> No Jobs Found</h1>
       <p className="no-job-description">
-        we could not find jobs. Try other filters
+        We could not find any jobs. Try other filters
       </p>
     </div>
   )
